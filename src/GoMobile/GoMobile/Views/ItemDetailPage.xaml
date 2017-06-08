@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:GoMobile.Converters;assembly=GoMobile"
+             xmlns:controls="clr-namespace:GoMobile.Controls;assembly=GoMobile"
+             x:Class="GoMobile.Views.ItemDetailPage"
+             Title="{Binding Title}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:ByteToImageConverter x:Key="byteToImage"></local:ByteToImageConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ScrollView
+        HorizontalOptions="Fill"
+        VerticalOptions="Start"
+        Orientation="Vertical">
+        <StackLayout Spacing="20" Padding="15" VerticalOptions="Fill">
+            <Label Text="{Binding Item.Description}" FontSize="Medium"/>
+            <Image Source="{Binding Item.Image, Converter={StaticResource byteToImage}}"
+               HorizontalOptions="FillAndExpand" 
+               VerticalOptions="Start"/>
+            <controls:GradientButton Command="{Binding TakePictureCommand}" StartGradientColor="#ADD8E6" EndGradientColor="#FFFFFF" Text="Take Picture" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
