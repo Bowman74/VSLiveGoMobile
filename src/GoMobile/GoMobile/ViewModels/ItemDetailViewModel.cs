@@ -12,7 +12,6 @@ namespace GoMobile.ViewModels
 		public Recording Item { get; set; }
 		public ItemDetailViewModel(Recording item = null)
 		{
-			//Title = item.Text;
 			Item = item;
 		}
 

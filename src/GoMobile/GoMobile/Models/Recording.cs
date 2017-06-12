@@ -8,21 +8,21 @@ namespace GoMobile.Models
 		public string Description
         {
 			get { return _description; }
-			set => SetProperty(ref _description, value); 
+			set { SetProperty(ref _description, value); } 
 		}
 
 		byte[] _image;
 		public byte[] Image
 		{
-			get => _image; 
-			set => SetProperty(ref _image, value); 
+			get { return _image; }
+            set { SetProperty(ref _image, value); }
 		}
 
         public DateTime _date = DateTime.Now;
 
         public DateTime Date
         {
-            get => _date;
+            get { return _date; }
         }
 	}
 }
