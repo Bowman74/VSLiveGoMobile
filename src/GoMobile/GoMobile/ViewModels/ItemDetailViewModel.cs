@@ -1,4 +1,5 @@
-﻿using GoMobile.Models;
+﻿using GoMobile.Constants;
+using GoMobile.Models;
 using Plugin.Media;
 using System.IO;
 using System.Threading.Tasks;
@@ -34,7 +35,7 @@ namespace GoMobile.ViewModels
 
             if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
             {
-                MessagingCenter.Send(this, "NoCamera");
+                MessagingCenter.Send(this, MessageConstants.NoCamera);
                 return;
             }
 

@@ -1,4 +1,5 @@
 ﻿
+using GoMobile.Constants;
 using GoMobile.ViewModels;
 
 using Xamarin.Forms;
@@ -24,7 +25,7 @@ namespace GoMobile.Views
 
         protected override void OnAppearing()
         {
-            MessagingCenter.Subscribe<ItemDetailViewModel>(this, "NoCamera", (obj) =>
+            MessagingCenter.Subscribe<ItemDetailViewModel>(this, MessageConstants.NoCamera, (obj) =>
             {
                 DisplayAlert("No Camera", ":( No camera available.", "OK");
             });
@@ -33,7 +34,7 @@ namespace GoMobile.Views
 
         protected override void OnDisappearing()
         {
-            MessagingCenter.Unsubscribe<ItemDetailViewModel>(this, "NoCamera");
+            MessagingCenter.Unsubscribe<ItemDetailViewModel>(this, MessageConstants.NoCamera);
             base.OnDisappearing();
         }
     }

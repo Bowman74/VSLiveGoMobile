@@ -7,6 +7,7 @@ using GoMobile.Models;
 using GoMobile.Views;
 
 using Xamarin.Forms;
+using GoMobile.Constants;
 
 namespace GoMobile.ViewModels
 {
@@ -21,7 +22,7 @@ namespace GoMobile.ViewModels
 			Items = new ObservableRangeCollection<Recording>();
 			LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
-			MessagingCenter.Subscribe<NewItemPage, Recording>(this, "AddItem", async (obj, item) =>
+			MessagingCenter.Subscribe<NewItemPage, Recording>(this, MessageConstants.AddItem, async (obj, item) =>
 			{
 				var _item = item as Recording;
 				Items.Add(_item);

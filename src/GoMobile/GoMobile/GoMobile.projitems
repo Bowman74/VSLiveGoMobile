@@ -27,6 +27,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Constants\MessageConstants.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\GradientButton.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\ByteToImageConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\BaseDataObject.cs" />
