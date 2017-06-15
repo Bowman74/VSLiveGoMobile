@@ -28,9 +28,12 @@ namespace GoMobile.Services
 		{
 			await InitializeAsync();
 
-			var _item = recordings.Where((Recording arg) => arg.Id == item.Id).FirstOrDefault();
-            recordings.Remove(_item);
-            recordings.Add(item);
+			var _item = recordings.FirstOrDefault((Recording arg) => arg.Id == item.Id);
+            if (_item != null)
+            {
+                recordings.Remove(_item);
+                recordings.Add(item);
+            }
 
 			return await Task.FromResult(true);
 		}
@@ -39,8 +42,11 @@ namespace GoMobile.Services
 		{
 			await InitializeAsync();
 
-			var _item = recordings.Where((Recording arg) => arg.Id == item.Id).FirstOrDefault();
-            recordings.Remove(_item);
+			var _item = recordings.FirstOrDefault((Recording arg) => arg.Id == item.Id);
+            if (_item != null)
+            {
+                recordings.Remove(_item);
+            }
 
 			return await Task.FromResult(true);
 		}

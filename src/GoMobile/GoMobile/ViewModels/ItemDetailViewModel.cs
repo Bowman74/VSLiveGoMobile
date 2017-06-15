@@ -19,14 +19,14 @@ namespace GoMobile.ViewModels
 		int quantity = 1;
 		public int Quantity
 		{
-			get { return quantity; }
-			set { SetProperty(ref quantity, value); }
+			get => quantity; 
+			set => SetProperty(ref quantity, value); 
 		}
 
         private ICommand _takePictureCommand;
         public ICommand TakePictureCommand
         {
-            get { return _takePictureCommand ?? new Command(async () => await TakePictureAsync()); }
+            get => _takePictureCommand ?? new Command(async () => await TakePictureAsync()); 
         }
 
         private async Task TakePictureAsync()
